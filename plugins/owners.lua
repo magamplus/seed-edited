@@ -1,5 +1,3 @@
-
-
 local function lock_group_namemod(msg, data, target)
   local group_name_set = data[tostring(target)]['settings']['set_name']
   local group_name_lock = data[tostring(target)]['settings']['lock_name']
@@ -300,7 +298,7 @@ local function run(msg, matches)
     end
     if matches[1] == 'loggroup' and matches[2] and is_owner2(msg.from.id, matches[2]) then
       savelog(matches[2], "------")
-      send_document("user#id".. msg.from.id,"./groups/logs/"..matches[2].."log.txt", ok_cb, false)
+      send_document("user#id".. msg.from.id,"./groups/"..matches[2].."log.txt", ok_cb, false)
     end
   end
 end
